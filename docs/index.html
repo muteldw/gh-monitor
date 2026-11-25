@@ -19,6 +19,7 @@ svg{background:#fff;border:1px solid #d0d7de;border-radius:8px;width:100%;margin
 <h2 style="font-size:15px;margin:16px 0 4px">저장소 용량 히트맵</h2>
 <div class="sub">크기 = 용량 · 색 = 최근 30일 커밋(진할수록 활발) · 작은 저장소는 최소 크기로 표시</div>
 <div id="tm" style="margin-top:6px"></div>
+<div id="tmlist" style="margin-top:8px"></div>
 <div style="margin:6px 0 0"><button id="tmsave" style="font:inherit;font-size:13px;padding:7px 12px;border:1px solid #d0d7de;border-radius:8px;background:#fff;cursor:pointer">PNG 이미지 저장</button> <span class="sub" id="tmmsg"></span></div>
 <svg id="chart" viewBox="0 0 600 160"></svg><div class="sub">일별 총 용량(MB, 파랑) · Actions 누적 시간(분, 주황)</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
@@ -51,6 +52,14 @@ fetch('data.json?'+Date.now()).then(r=>r.json()).then(d=>{
   g.filter(x=>x.x1-x.x0>60&&x.y1-x.y0>34).each(function(x){const e=d3.select(this),k='#2d3a4a';
    e.append('text').attr('x',6).attr('y',17).attr('font-size',12).attr('font-weight',600).attr('fill',k).text(x.data.n+(x.data.pr?' (비공개)':''));
    e.append('text').attr('x',6).attr('y',32).attr('font-size',11).attr('fill',k).text(mb(x.data.s)+' · 30일 '+x.data.c+'커밋');});
+  const L=document.getElementById('tmlist');L.innerHTML='';
+  R.slice().sort((a,b)=>b[1].size_kb-a[1].size_kb).forEach(([n,v])=>{
+   const r=document.createElement('div');r.style.cssText='display:flex;align-items:center;gap:8px;padding:5px 2px;border-bottom:1px solid #eaeef2;font-size:13px';
+   const sw=document.createElement('span');sw.style.cssText='width:12px;height:12px;border-radius:3px;flex:none;border:1px solid #d0d7de;background:'+col(v.commits_30d);
+   const nm=document.createElement('span');nm.style.cssText='flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap';nm.textContent=n+(v.private?' 🔒':'');
+   const sz=document.createElement('span');sz.style.cssText='text-align:right;white-space:nowrap;color:#656d76';
+   sz.textContent=(v.size_kb<1024?v.size_kb+' KB':mb(v.size_kb))+' · '+(v.size_kb/tot*100).toFixed(1)+'% · 30일 '+v.commits_30d;
+   r.append(sw,nm,sz);L.appendChild(r);});
   document.getElementById('tmsave').onclick=async()=>{const m=document.getElementById('tmmsg');
    try{const svg=new XMLSerializer().serializeToString(document.getElementById('tmsvg'));
     const img=new Image();await new Promise((ok,no)=>{img.onload=ok;img.onerror=no;img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)});
