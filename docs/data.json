@@ -1,0 +1,198 @@
+{
+ "updated": "2026-11-25T06:48:47Z",
+ "repos": {
+  "gh-monitor": {
+   "full_name": "muteldw/gh-monitor",
+   "private": false,
+   "url": "https://github.com/muteldw/gh-monitor",
+   "size_kb": 0,
+   "pushed_at": "2026-11-25T06:28:25Z",
+   "commits_7d": 1,
+   "commits_30d": 1,
+   "last_commit": {
+    "msg": "feat: GitHub 현황 모니터링 시스템 초기 구축",
+    "at": "2026-11-25T06:25:16Z"
+   },
+   "pages": {
+    "url": "https://muteldw.github.io/gh-monitor/",
+    "status": "built",
+    "build": "built",
+    "build_at": "2026-11-25T06:40:40Z",
+    "error": null
+   },
+   "actions_total_sec": 39,
+   "actions_runs_total": 1,
+   "actions_fail_total": 0,
+   "actions_checked": "2026-11-25T06:48:47Z"
+  },
+  "jeonse-radar": {
+   "full_name": "muteldw/jeonse-radar",
+   "private": false,
+   "url": "https://github.com/muteldw/jeonse-radar",
+   "size_kb": 42904,
+   "pushed_at": "2026-11-25T03:59:44Z",
+   "commits_7d": 8,
+   "commits_30d": 42,
+   "last_commit": {
+    "msg": "daily: 2026-11-25 실거래 갱신",
+    "at": "2026-11-25T03:59:41Z"
+   },
+   "pages": {
+    "url": "https://muteldw.github.io/jeonse-radar/",
+    "status": null,
+    "build": null,
+    "build_at": null,
+    "error": null
+   },
+   "actions_total_sec": 34593,
+   "actions_runs_total": 131,
+   "actions_fail_total": 0,
+   "actions_checked": "2026-11-25T06:48:47Z"
+  },
+  "kuam-route-wx": {
+   "full_name": "muteldw/kuam-route-wx",
+   "private": false,
+   "url": "https://github.com/muteldw/kuam-route-wx",
+   "size_kb": 2630,
+   "pushed_at": "2026-11-25T01:28:56Z",
+   "commits_7d": 12,
+   "commits_30d": 19,
+   "last_commit": {
+    "msg": "v1.6.0: 밝게/어둡게 화면 선택 버튼, 스냅샷 갱신",
+    "at": "2026-11-22T11:02:24Z"
+   },
+   "pages": {
+    "url": "https://muteldw.github.io/kuam-route-wx/",
+    "status": "built",
+    "build": "built",
+    "build_at": "2026-11-22T11:02:59Z",
+    "error": null
+   },
+   "actions_total_sec": 2939,
+   "actions_runs_total": 46,
+   "actions_fail_total": 2,
+   "actions_checked": "2026-11-25T06:48:47Z"
+  },
+  "mom-english": {
+   "full_name": "muteldw/mom-english",
+   "private": false,
+   "url": "https://github.com/muteldw/mom-english",
+   "size_kb": 67,
+   "pushed_at": "2026-11-24T14:15:21Z",
+   "commits_7d": 6,
+   "commits_30d": 6,
+   "last_commit": {
+    "msg": "v1.2.2 사용 기록: 이름 입력, 접속·학습 로그, 구글 시트 수집 스크립트",
+    "at": "2026-11-24T14:15:19Z"
+   },
+   "pages": {
+    "url": "https://muteldw.github.io/mom-english/",
+    "status": "built",
+    "build": "built",
+    "build_at": "2026-11-24T14:15:44Z",
+    "error": null
+   },
+   "actions_total_sec": 156,
+   "actions_runs_total": 6,
+   "actions_fail_total": 0,
+   "actions_checked": "2026-11-25T06:48:47Z"
+  },
+  "uam-wind-service": {
+   "full_name": "muteldw/uam-wind-service",
+   "private": false,
+   "url": "https://github.com/muteldw/uam-wind-service",
+   "size_kb": 1690,
+   "pushed_at": "2026-11-09T01:41:37Z",
+   "commits_7d": 0,
+   "commits_30d": 2,
+   "last_commit": {
+    "msg": "Add files via upload",
+    "at": "2026-11-09T01:41:34Z"
+   },
+   "pages": {
+    "url": "https://muteldw.github.io/uam-wind-service/",
+    "status": "built",
+    "build": "built",
+    "build_at": "2026-11-09T01:42:14Z",
+    "error": null
+   },
+   "actions_total_sec": 89,
+   "actions_runs_total": 2,
+   "actions_fail_total": 0,
+   "actions_checked": "2026-11-25T06:48:47Z"
+  },
+  "empco-dashboard": {
+   "full_name": "muteldw/empco-dashboard",
+   "private": false,
+   "url": "https://github.com/muteldw/empco-dashboard",
+   "size_kb": 18,
+   "pushed_at": "2026-10-25T09:35:51Z",
+   "commits_7d": 0,
+   "commits_30d": 0,
+   "last_commit": null,
+   "pages": {
+    "url": "https://muteldw.github.io/empco-dashboard/",
+    "status": "built",
+    "build": "built",
+    "build_at": "2026-10-25T09:36:28Z",
+    "error": null
+   },
+   "actions_total_sec": 0,
+   "actions_runs_total": 0,
+   "actions_fail_total": 0,
+   "actions_checked": "2026-11-25T06:48:47Z"
+  },
+  "coex-event-alerts": {
+   "full_name": "muteldw/coex-event-alerts",
+   "private": false,
+   "url": "https://github.com/muteldw/coex-event-alerts",
+   "size_kb": 12,
+   "pushed_at": "2026-10-22T12:41:19Z",
+   "commits_7d": 0,
+   "commits_30d": 0,
+   "last_commit": null,
+   "pages": null,
+   "actions_total_sec": 131,
+   "actions_runs_total": 9,
+   "actions_fail_total": 9,
+   "actions_checked": "2026-11-25T06:48:47Z"
+  },
+  "realestate-ml": {
+   "full_name": "muteldw/realestate-ml",
+   "private": true,
+   "url": "https://github.com/muteldw/realestate-ml",
+   "size_kb": 1608,
+   "pushed_at": "2022-04-06T09:30:38Z",
+   "commits_7d": 0,
+   "commits_30d": 0,
+   "last_commit": null,
+   "pages": null,
+   "actions_total_sec": 0,
+   "actions_runs_total": 0,
+   "actions_fail_total": 0,
+   "actions_checked": "2026-11-25T06:48:47Z"
+  },
+  "frozen": {
+   "full_name": "muteldw/frozen",
+   "private": true,
+   "url": "https://github.com/muteldw/frozen",
+   "size_kb": 0,
+   "pushed_at": "2019-02-15T05:03:45Z",
+   "commits_7d": 0,
+   "commits_30d": 0,
+   "last_commit": null,
+   "pages": null,
+   "actions_total_sec": 0,
+   "actions_runs_total": 0,
+   "actions_fail_total": 0,
+   "actions_checked": "2026-11-25T06:48:47Z"
+  }
+ },
+ "history": [
+  {
+   "date": "2026-11-25",
+   "size_kb": 48929,
+   "actions_min": 632.5
+  }
+ ]
+}
