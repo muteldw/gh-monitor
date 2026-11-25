@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GitHub 현황</title>
+<style>
+body{font:15px system-ui,sans-serif;margin:0;padding:12px;background:#f6f8fa;color:#1f2328}
+h1{font-size:18px}.sub{color:#656d76;font-size:12px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:12px 0}
+.card{background:#fff;border:1px solid #d0d7de;border-radius:8px;padding:10px}
+.card b{display:block;font-size:20px}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #d0d7de;font-size:13px}
+th,td{padding:6px 8px;border-bottom:1px solid #eaeef2;text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}th{background:#f6f8fa}
+.wrap{overflow-x:auto}.ok{color:#1a7f37}.bad{color:#cf222e}.mid{color:#9a6700}
+svg{background:#fff;border:1px solid #d0d7de;border-radius:8px;width:100%;margin-top:12px}
+</style></head><body>
+<h1>GitHub 현황</h1><div class="sub" id="upd">불러오는 중…</div>
+<div class="cards" id="cards"></div>
+<div class="wrap"><table id="t"><thead><tr><th>저장소</th><th>7일 커밋</th><th>30일 커밋</th><th>마지막 푸시</th><th>Pages</th><th>용량</th><th>Actions 누적</th><th>실패</th></tr></thead><tbody></tbody></table></div>
+<svg id="chart" viewBox="0 0 600 160"></svg><div class="sub">일별 총 용량(MB, 파랑) · Actions 누적 시간(분, 주황)</div>
+<script>
+const ago=s=>{if(!s)return'-';const m=(Date.now()-new Date(s))/6e4;return m<60?Math.round(m)+'분 전':m<1440?Math.round(m/60)+'시간 전':Math.round(m/1440)+'일 전'};
+const mb=k=>(k/1024).toFixed(1)+' MB',hm=s=>s<3600?Math.round(s/60)+'분':(s/3600).toFixed(1)+'시간';
+fetch('data.json?'+Date.now()).then(r=>r.json()).then(d=>{
+ const R=Object.entries(d.repos).sort((a,b)=>new Date(b[1].pushed_at)-new Date(a[1].pushed_at));
+ const sum=f=>R.reduce((s,[,v])=>s+f(v),0);
+ upd.textContent='갱신: '+new Date(d.updated).toLocaleString('ko-KR')+' · 저장소 '+R.length+'개';
+ cards.innerHTML=[['7일 커밋',sum(v=>v.commits_7d)],['30일 커밋',sum(v=>v.commits_30d)],['총 용량',mb(sum(v=>v.size_kb))],['Actions 누적',hm(sum(v=>v.actions_total_sec))],['Actions 실행',sum(v=>v.actions_runs_total)+'회']]
+  .map(([k,v])=>`<div class="card">${k}<b>${v}</b></div>`).join('');
+ t.tBodies[0].innerHTML=R.map(([n,v])=>{const p=v.pages;
+  const ps=!p?'-':(p.build==='built'?'<span class=ok>●정상</span>':p.build==='errored'?'<span class=bad>●오류</span>':'<span class=mid>●'+(p.build||p.status)+'</span>');
+  return `<tr><td><a href="${v.url}">${n}</a>${v.private?' 🔒':''}</td><td>${v.commits_7d}</td><td>${v.commits_30d}</td><td>${ago(v.pushed_at)}</td><td>${p?`<a href="${p.url}">${ps}</a>`:ps}</td><td>${mb(v.size_kb)}</td><td>${hm(v.actions_total_sec)}</td><td class="${v.actions_fail_total?'bad':''}">${v.actions_fail_total}</td></tr>`}).join('');
+ const H=d.history||[];if(H.length>1){const line=(f,c)=>{const mx=Math.max(...H.map(f))||1;return `<polyline fill="none" stroke="${c}" stroke-width="2" points="${H.map((h,i)=>`${10+i*580/(H.length-1)},${150-f(h)/mx*130}`).join(' ')}"/>`};
+  chart.innerHTML=line(h=>h.size_kb,'#0969da')+line(h=>h.actions_min,'#d4690a')}
+}).catch(e=>upd.textContent='data.json 없음 — Actions를 한 번 실행하세요');
+</script></body></html>

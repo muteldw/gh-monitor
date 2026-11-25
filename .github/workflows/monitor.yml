@@ -1,0 +1,22 @@
+name: GitHub 현황 수집
+on:
+  schedule: [{cron: "0 */6 * * *"}]   # 6시간마다 (UTC)
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: monitor
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/monitor.py
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+      - name: 변경 시 커밋
+        run: |
+          git config user.name "gh-monitor[bot]"
+          git config user.email "gh-monitor@users.noreply.github.com"
+          git add docs/data.json
+          git diff --cached --quiet || (git commit -m "chore: 현황 갱신 $(date -u +%F\ %H:%M)" && git push)
