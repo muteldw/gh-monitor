@@ -61,10 +61,19 @@ def main():
         pg = get(f"/repos/{full}/pages")
         pages = None
         if pg:
-            b = get(f"/repos/{full}/pages/builds/latest") or {}
-            pages = {"url": pg.get("html_url"), "status": pg.get("status"),
-                     "build": b.get("status"), "build_at": b.get("updated_at"),
-                     "error": (b.get("error") or {}).get("message")}
+            bt = pg.get("build_type")
+            if bt == "workflow":  # Actions로 배포하는 Pages: legacy builds API 에는 기록이 없음
+                deps = get(f"/repos/{full}/deployments", "?environment=github-pages&per_page=1") or []
+                sts = (get(f"/repos/{full}/deployments/{deps[0]['id']}/statuses", "?per_page=1") or []) if deps else []
+                state = sts[0]["state"] if sts else None
+                build = {"success": "built", "failure": "errored", "error": "errored"}.get(state, state)
+                pages = {"url": pg.get("html_url"), "status": build, "build": build, "type": bt,
+                         "build_at": sts[0]["created_at"] if sts else None, "error": None}
+            else:
+                b = get(f"/repos/{full}/pages/builds/latest") or {}
+                pages = {"url": pg.get("html_url"), "status": pg.get("status"), "type": bt,
+                         "build": b.get("status"), "build_at": b.get("updated_at"),
+                         "error": (b.get("error") or {}).get("message")}
         # Actions 누적 실행시간: 마지막 확인 이후 완료된 run 만 추가 (분 단위, 반올림 없이 초 누적)
         seen = old.get("actions_checked") or iso(NOW - timedelta(days=30))
         runs = paged(f"/repos/{full}/actions/runs", key="workflow_runs",
