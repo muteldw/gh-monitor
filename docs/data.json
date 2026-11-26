@@ -1,6 +1,56 @@
 {
- "updated": "2026-11-26T07:59:03Z",
+ "updated": "2026-11-26T21:21:27Z",
  "repos": {
+  "kuam-route-wx": {
+   "full_name": "muteldw/kuam-route-wx",
+   "private": false,
+   "url": "https://github.com/muteldw/kuam-route-wx",
+   "size_kb": 2633,
+   "pushed_at": "2026-11-26T20:32:10Z",
+   "commits_7d": 8,
+   "commits_30d": 19,
+   "last_commit": {
+    "msg": "v1.6.0: 밝게/어둡게 화면 선택 버튼, 스냅샷 갱신",
+    "at": "2026-11-22T11:02:24Z"
+   },
+   "pages": {
+    "url": "https://muteldw.github.io/kuam-route-wx/",
+    "status": "built",
+    "type": "legacy",
+    "build": "built",
+    "build_at": "2026-11-22T11:02:59Z",
+    "error": null
+   },
+   "actions_total_sec": 3874,
+   "actions_runs_total": 51,
+   "actions_fail_total": 2,
+   "actions_checked": "2026-11-26T21:21:27Z"
+  },
+  "gh-monitor": {
+   "full_name": "muteldw/gh-monitor",
+   "private": false,
+   "url": "https://github.com/muteldw/gh-monitor",
+   "size_kb": 18,
+   "pushed_at": "2026-11-26T07:59:14Z",
+   "commits_7d": 9,
+   "commits_30d": 9,
+   "last_commit": {
+    "msg": "chore: 현황 갱신 2026-11-26 07:59",
+    "at": "2026-11-26T07:59:13Z"
+   },
+   "pages": {
+    "url": "https://muteldw.github.io/gh-monitor/",
+    "status": "built",
+    "type": "legacy",
+    "build": "built",
+    "build_at": "2026-11-26T07:59:46Z",
+    "error": null
+   },
+   "actions_total_sec": 328,
+   "actions_runs_total": 8,
+   "actions_fail_total": 0,
+   "actions_checked": "2026-11-26T21:21:27Z"
+  },
   "jeonse-radar": {
    "full_name": "muteldw/jeonse-radar",
    "private": false,
@@ -21,60 +71,10 @@
     "build_at": "2026-11-26T03:29:36Z",
     "error": null
    },
-   "actions_total_sec": 35440,
-   "actions_runs_total": 134,
+   "actions_total_sec": 35453,
+   "actions_runs_total": 135,
    "actions_fail_total": 0,
-   "actions_checked": "2026-11-26T07:59:03Z"
-  },
-  "kuam-route-wx": {
-   "full_name": "muteldw/kuam-route-wx",
-   "private": false,
-   "url": "https://github.com/muteldw/kuam-route-wx",
-   "size_kb": 2633,
-   "pushed_at": "2026-11-26T02:51:56Z",
-   "commits_7d": 8,
-   "commits_30d": 19,
-   "last_commit": {
-    "msg": "v1.6.0: 밝게/어둡게 화면 선택 버튼, 스냅샷 갱신",
-    "at": "2026-11-22T11:02:24Z"
-   },
-   "pages": {
-    "url": "https://muteldw.github.io/kuam-route-wx/",
-    "status": "built",
-    "type": "legacy",
-    "build": "built",
-    "build_at": "2026-11-22T11:02:59Z",
-    "error": null
-   },
-   "actions_total_sec": 3391,
-   "actions_runs_total": 49,
-   "actions_fail_total": 2,
-   "actions_checked": "2026-11-26T07:59:03Z"
-  },
-  "gh-monitor": {
-   "full_name": "muteldw/gh-monitor",
-   "private": false,
-   "url": "https://github.com/muteldw/gh-monitor",
-   "size_kb": 17,
-   "pushed_at": "2026-11-25T21:33:58Z",
-   "commits_7d": 8,
-   "commits_30d": 8,
-   "last_commit": {
-    "msg": "chore: 현황 갱신 2026-11-25 21:33",
-    "at": "2026-11-25T21:33:57Z"
-   },
-   "pages": {
-    "url": "https://muteldw.github.io/gh-monitor/",
-    "status": "built",
-    "type": "legacy",
-    "build": "built",
-    "build_at": "2026-11-25T21:34:30Z",
-    "error": null
-   },
-   "actions_total_sec": 291,
-   "actions_runs_total": 7,
-   "actions_fail_total": 0,
-   "actions_checked": "2026-11-26T07:59:03Z"
+   "actions_checked": "2026-11-26T21:21:27Z"
   },
   "mom-english": {
    "full_name": "muteldw/mom-english",
@@ -99,7 +99,7 @@
    "actions_total_sec": 156,
    "actions_runs_total": 6,
    "actions_fail_total": 0,
-   "actions_checked": "2026-11-26T07:59:03Z"
+   "actions_checked": "2026-11-26T21:21:27Z"
   },
   "uam-wind-service": {
    "full_name": "muteldw/uam-wind-service",
@@ -124,7 +124,7 @@
    "actions_total_sec": 89,
    "actions_runs_total": 2,
    "actions_fail_total": 0,
-   "actions_checked": "2026-11-26T07:59:03Z"
+   "actions_checked": "2026-11-26T21:21:27Z"
   },
   "empco-dashboard": {
    "full_name": "muteldw/empco-dashboard",
@@ -146,7 +146,7 @@
    "actions_total_sec": 0,
    "actions_runs_total": 0,
    "actions_fail_total": 0,
-   "actions_checked": "2026-11-26T07:59:03Z"
+   "actions_checked": "2026-11-26T21:21:27Z"
   },
   "coex-event-alerts": {
    "full_name": "muteldw/coex-event-alerts",
@@ -161,7 +161,7 @@
    "actions_total_sec": 155,
    "actions_runs_total": 10,
    "actions_fail_total": 10,
-   "actions_checked": "2026-11-26T07:59:03Z"
+   "actions_checked": "2026-11-26T21:21:27Z"
   },
   "realestate-ml": {
    "full_name": "muteldw/realestate-ml",
@@ -176,7 +176,7 @@
    "actions_total_sec": 0,
    "actions_runs_total": 0,
    "actions_fail_total": 0,
-   "actions_checked": "2026-11-26T07:59:03Z"
+   "actions_checked": "2026-11-26T21:21:27Z"
   },
   "frozen": {
    "full_name": "muteldw/frozen",
@@ -191,7 +191,7 @@
    "actions_total_sec": 0,
    "actions_runs_total": 0,
    "actions_fail_total": 0,
-   "actions_checked": "2026-11-26T07:59:03Z"
+   "actions_checked": "2026-11-26T21:21:27Z"
   }
  },
  "history": [
@@ -202,8 +202,8 @@
   },
   {
    "date": "2026-11-26",
-   "size_kb": 55995,
-   "actions_min": 658.7
+   "size_kb": 55996,
+   "actions_min": 667.6
   }
  ]
 }
